@@ -1,0 +1,6 @@
+*.pyc
+__pycache__
+Untitled.ipynb
+test.json
+dior.csv
+scrapy_output.txt
