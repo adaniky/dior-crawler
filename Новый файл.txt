@@ -1,0 +1,3 @@
+My simple scraper of site "https://www.dior.com" based on Python 3.7.1 and Scrapy 1.6.0 <br>
+
+

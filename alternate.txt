@@ -1,0 +1,21 @@
+Belgique - fr_be
+Belgie - nl_be
+Deutschland - de_de
+Espana - es_es
+France - fr_fr
+Italia - it_it
+Nederland - nl_nl
+Russia - ru_ru
+Switzerland - en_ch
+United Kingdom - en_gb
+United States - en_us
+Brasil - pt_br
+Latin America - es_sam
+Mainland China - zh_cn
+Hong-Kong(Eng) - zh_hk
+Hong-Kong - en_hk
+Japonia - ja_jp
+South Korea - ko_krs
+Taiwan - zh_tw
+
+

@@ -1,6 +1,5 @@
 import pandas as pd
 from collections import Counter
-from matplotlib import pyplot as plt
 import json
 
 df = pd.read_csv('dior.csv')
