@@ -14,9 +14,13 @@ BOT_NAME = 'dior'
 SPIDER_MODULES = ['dior.spiders']
 NEWSPIDER_MODULE = 'dior.spiders'
 
+
 #LOG_STDOUT = True
 #LOG_FILE = '/home/adanick/rec/Dior/dior/scrapy_output.txt'
 #DOWNLOAD_TIMEOUT = 360
+
+
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'dior (+http://www.yourdomain.com)'
 

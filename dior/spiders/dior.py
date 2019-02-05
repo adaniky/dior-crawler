@@ -1,14 +1,16 @@
+#libs
 import scrapy
 import re, json
 
 class DiorSpider(scrapy.Spider):
-    name = 'dior'
+    name = 'dior' #name of spider
     
-    
+    # if you type in command line locate code,will be parsed only products, available in some region
     def start_requests(self):
         url = 'https://www.dior.com/'
         locate = getattr(self, 'locate', None)
-        tags = [
+        #all available language codes
+        tags = [ 
                 'fr_be', 
                 'nl_be', 
                 'de_de', 
@@ -37,20 +39,20 @@ class DiorSpider(scrapy.Spider):
                 url = url + i
                 yield scrapy.Request(url, self.parse)
         
-
+    # follow the links to categories of products
     def parse(self, response):
         
         for href in response.css('a[class="navigation-item-link"]::attr(href)'):
             yield response.follow(href, self.parse_products)
 
-        
+    # follow the links with product descriptions 
     def parse_products(self, response):
         
         for href in response.css('a[class="product-link"]::attr(href)'):
             yield response.follow(href, self.parse_data)        
 
 
-
+    # parse data
     def parse_data(self, response):
         b = r"(var dataLayer \= \[)(.*?)(\]\;\n)"
         a = response.css("script::text").getall()[2]

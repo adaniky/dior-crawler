@@ -28,10 +28,10 @@ scrapy crawl dior -o dior.csv -a locate=de_de
 ```
 Where de_de - German Language Code
 
-The list of all available language codes is in the file "alternate.txt"
+The list of all available language codes is in the file "alternate.txt" <br/>
 If you will type in shell this one:
 ```
-scrapy crawl dior -o dior.csv -a locate=de_de
+python test.py
 ```
-you`ll get quantity of products and percentage of products by category, colour, country, gender and currency as a file "test.json"
+You`ll get quantity of products and percentage of products by category, colour, country, gender and currency as a file "test.json"
 
