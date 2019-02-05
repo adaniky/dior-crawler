@@ -66,6 +66,7 @@ class DiorSpider(scrapy.Spider):
             'country': data['country'],
             'time': response.request.meta['download_latency'],
             'SKU': data['ecommerce']['detail']['products'][0]['id'],
-            'gender': data['subUniverse']
+            'gender': data['subUniverse'],
+            'description': response.css('meta[name="description"]::attr(content)').get()
         }
 
