@@ -4,16 +4,48 @@ import re, json
 class DiorSpider(scrapy.Spider):
     name = 'dior'
     
-    start_urls = ['https://www.dior.com/en_us']
+    
+    def start_requests(self):
+        url = 'https://www.dior.com/'
+        locate = getattr(self, 'locate', None)
+        tags = [
+                'fr_be', 
+                'nl_be', 
+                'de_de', 
+                'es_es',
+                'fr_fr',
+                'it_it',
+                'nl_nl',
+                'ru_ru',
+                'en_ch',
+                'en_gb',
+                'en_us',
+                'pt_br',
+                'es_sam',
+                'zh_cn',
+                'zh_hk',
+                'en_hk',
+                'ja_jp',
+                'ko_kr',
+                'zh_tw',
+                ]
+        if locate is not None:
+            url = url + locate
+            yield scrapy.Request(url, self.parse)
+        else:
+            for i in tags:
+                url = url + i
+                yield scrapy.Request(url, self.parse)
+        
 
     def parse(self, response):
-        # follow links to author pages
+        
         for href in response.css('a[class="navigation-item-link"]::attr(href)'):
             yield response.follow(href, self.parse_products)
 
         
     def parse_products(self, response):
-        # follow links to author pages
+        
         for href in response.css('a[class="product-link"]::attr(href)'):
             yield response.follow(href, self.parse_data)        
 
